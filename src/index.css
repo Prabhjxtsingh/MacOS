@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  
+  --color-mac-bg: rgba(255, 255, 255, 0.2);
+  --color-mac-border: rgba(255, 255, 255, 0.3);
+  --color-mac-dark-bg: rgba(30, 30, 30, 0.5);
+  --color-mac-dark-border: rgba(255, 255, 255, 0.1);
+}
+
+@layer base {
+  body {
+    margin: 0;
+    overflow: hidden; /* Desktop is fixed size */
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    user-select: none;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/40 backdrop-blur-xl border border-white/40 shadow-lg dark:bg-black/40 dark:border-white/10;
+  }
+  .glass-dock {
+    @apply bg-white/20 backdrop-blur-2xl border border-white/20 shadow-xl dark:bg-black/30 dark:border-white/10;
+  }
+  .glass-window {
+    @apply bg-white/80 backdrop-blur-2xl border border-white/30 shadow-2xl dark:bg-gray-900/80 dark:border-gray-700/50;
+  }
+  .mac-shadow {
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 1px rgba(0,0,0,0.3);
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
