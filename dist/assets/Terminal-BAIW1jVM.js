@@ -1,0 +1,8 @@
+import{n as e,s as t,t as n}from"./jsx-runtime-2UHhqg_S.js";var r=t(e(),1),i=n();function a(){let[e,t]=(0,r.useState)([{type:`output`,text:`Last login: `+new Date().toString().split(` GMT`)[0]+` on ttys000`}]),[n,a]=(0,r.useState)(``),o=(0,r.useRef)(null),s=(0,r.useRef)(null);return(0,r.useEffect)(()=>{s.current?.scrollIntoView({behavior:`smooth`})},[e]),(0,i.jsxs)(`div`,{className:`flex flex-col h-full w-full bg-black/90 font-mono text-sm p-2 overflow-y-auto rounded-b-xl`,onClick:()=>o.current?.focus(),children:[e.map((e,t)=>(0,i.jsx)(`div`,{className:`${e.type===`input`?`text-green-400`:`text-gray-200`} whitespace-pre-wrap`,children:e.text},t)),(0,i.jsxs)(`div`,{className:`flex text-green-400 mt-1`,children:[(0,i.jsx)(`span`,{className:`mr-2`,children:`user@MacBook-Pro ~ %`}),(0,i.jsx)(`input`,{ref:o,type:`text`,value:n,onChange:e=>a(e.target.value),onKeyDown:r=>{if(r.key===`Enter`){let r=n.trim().toLowerCase(),i=[...e,{type:`input`,text:`user@MacBook-Pro ~ % ${n}`}],o=``;switch(r){case`help`:o=`Available commands: help, clear, date, whoami, echo [text], ls`;break;case`clear`:t([]),a(``);return;case`date`:o=new Date().toString();break;case`whoami`:o=`user`;break;case`ls`:o=`Desktop
+Documents
+Downloads
+Library
+Movies
+Music
+Pictures
+Public`;break;default:r.startsWith(`echo `)?o=n.substring(5):r!==``&&(o=`zsh: command not found: ${r}`)}o&&i.push({type:`output`,text:o}),t(i),a(``)}},className:`flex-1 bg-transparent outline-none border-none text-gray-200`,autoFocus:!0})]}),(0,i.jsx)(`div`,{ref:s})]})}export{a as default};
